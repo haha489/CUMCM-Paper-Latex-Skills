@@ -1,0 +1,33 @@
+% !TeX program = xelatex
+% Copy this project, replace editing prompts, and adapt sections to the actual task.
+\documentclass[UTF8,a4paper,zihao=-4,fontset=none]{ctexart}
+\input{preamble.tex}
+\PaperDrafttrue
+\newcommand{\PaperTitle}{\FillIn{论文题目：研究对象、任务与核心方法}}
+\input{data/results.tex}
+
+\begin{document}
+\pagenumbering{arabic}
+\begin{center}
+  {\heiti\zihao{3}\PaperTitle\par}
+  \vspace{0.65em}
+  {\heiti\zihao{4}摘\quad 要\par}
+\end{center}
+\input{sections/abstract.tex}
+\clearpage
+
+\input{sections/introduction.tex}
+\input{sections/assumptions.tex}
+\input{sections/q01.tex}
+% Add q02.tex, q03.tex, ... according to the actual number of questions.
+\input{sections/evaluation.tex}
+
+% No fabricated references are provided. Add verified entries and cite them.
+% BibTeX creates the bibliography when citations are present.
+\bibliographystyle{unsrt}
+\bibliography{references}
+
+\clearpage
+\appendix
+\input{sections/appendix.tex}
+\end{document}

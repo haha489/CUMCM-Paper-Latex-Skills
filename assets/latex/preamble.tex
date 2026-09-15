@@ -1,0 +1,64 @@
+\usepackage[a4paper,margin=2.5cm,footskip=1.25cm]{geometry}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx,booktabs,array,longtable,tabularx}
+\usepackage{caption,subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[hidelinks,unicode]{hyperref}
+
+\IfFontExistsTF{SimSun}{%
+  \setCJKmainfont{SimSun}[BoldFont=SimHei,ItalicFont=KaiTi]
+  \setCJKsansfont{SimHei}
+  \setCJKmonofont{FangSong}
+  \setCJKfamilyfont{zhsong}{SimSun}
+  \setCJKfamilyfont{zhhei}{SimHei}
+  \setCJKfamilyfont{zhkai}{KaiTi}
+  \setCJKfamilyfont{zhfs}{FangSong}
+}{%
+  \setCJKmainfont{FandolSong-Regular.otf}[BoldFont=FandolSong-Bold.otf,ItalicFont=FandolKai-Regular.otf]
+  \setCJKsansfont{FandolHei-Regular.otf}
+  \setCJKmonofont{FandolFang-Regular.otf}
+  \setCJKfamilyfont{zhsong}{FandolSong-Regular.otf}
+  \setCJKfamilyfont{zhhei}{FandolHei-Regular.otf}
+  \setCJKfamilyfont{zhkai}{FandolKai-Regular.otf}
+  \setCJKfamilyfont{zhfs}{FandolFang-Regular.otf}
+}
+\IfFontExistsTF{Times New Roman}{\setmainfont{Times New Roman}}{\setmainfont{Latin Modern Roman}}
+\IfFontExistsTF{Consolas}{\setmonofont{Consolas}}{\setmonofont{Latin Modern Mono}}
+\providecommand{\songti}{\CJKfamily{zhsong}}
+\providecommand{\heiti}{\CJKfamily{zhhei}}
+\providecommand{\kaishu}{\CJKfamily{zhkai}}
+\providecommand{\fangsong}{\CJKfamily{zhfs}}
+\linespread{1.18}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.15em}
+\setlength{\emergencystretch}{1em}
+\ctexset{
+  section={format=\heiti\zihao{4},beforeskip=1.0ex plus .2ex,afterskip=.8ex},
+  subsection={format=\heiti\zihao{-4},beforeskip=.8ex,afterskip=.5ex},
+  subsubsection={format=\heiti\zihao{-4},beforeskip=.6ex,afterskip=.3ex}
+}
+\setlist{nosep,leftmargin=2em}
+\captionsetup{font=small,labelsep=quad}
+\captionsetup[table]{position=top,skip=6pt}
+\captionsetup[figure]{position=bottom,skip=6pt}
+\graphicspath{{figures/}}
+\renewcommand{\arraystretch}{1.18}
+\pagestyle{plain}
+\hypersetup{pdftitle={数学建模论文},pdfauthor={},pdfsubject={},pdfkeywords={}}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,columns=fullflexible,
+  keepspaces=true,showstringspaces=false,numbers=left,numberstyle=\tiny,
+  xleftmargin=2em,frame=none,tabsize=4}
+
+\newif\ifPaperDraft
+\newcommand{\FillIn}[1]{%
+  \ifPaperDraft\textcolor{gray}{【#1】}%
+  \else\PackageError{cumcm-paper}{Unfinished editing prompt}{Replace all FillIn prompts before final compilation.}\fi
+}
+\newcommand{\DeclareResult}[2]{\expandafter\gdef\csname paperresult@#1\endcsname{#2}}
+\newcommand{\Result}[1]{%
+  \ifcsname paperresult@#1\endcsname
+    \ifmmode\text{\csname paperresult@#1\endcsname}\else\csname paperresult@#1\endcsname\fi
+  \else\PackageError{cumcm-paper}{Undefined result #1}{Update evidence.json and generate data/results.tex.}\fi
+}
