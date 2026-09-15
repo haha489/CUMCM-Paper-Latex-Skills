@@ -1,4 +1,4 @@
-# CUMCM LaTeX Paper Skill
+# 数学建模论文写作 LaTeX Paper Skill
 
 **把已经完成的数学建模成果，整理成论证清楚、结果可追溯的中文 LaTeX 论文。**
 
