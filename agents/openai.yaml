@@ -1,0 +1,4 @@
+interface:
+  display_name: "数模论文写作 · LaTeX"
+  short_description: "从已完成的代码、结果和图表还原论证，按题型撰写并核查中文数模论文"
+  default_prompt: "使用 $cumcm-latex-paper，根据当前文件夹中已完成的代码、结果、答案和图表撰写中文 LaTeX 论文，核查证据后编译 PDF。模型评价只写优点和简短缺点；单独交付论文完善建议.md，盘点流程图、数据侧写和每问结果配图，供作者选择改进。"
